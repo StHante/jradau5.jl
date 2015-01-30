@@ -79,7 +79,7 @@ function solout_dummy()
 end
 # EMXIF
 
-function radau5(f::Function, tspan::Array{Int64,1}, y0::Array{Float64,1};
+function radau5(f::Function, tspan::Array{Float64,1}, y0::Array{Float64,1};
          rtol     ::Float64 = 1e-6,  # Scalar relative tolerance
          atol     ::Float64 = 1e-6,  # Scalar absolute tolerance
          h0       ::Float64 = 0.0,   # Size of first step (0.0 defaults to 1e-6)
@@ -174,7 +174,7 @@ function radau5(f::Function, tspan::Array{Int64,1}, y0::Array{Float64,1};
       &tspan[end],# XEND
       &h0,        # H
       &rtol,      # RTOL    FIXME: Support vector-valued tolerances
-      &atpö,      # ATOL    FIXME: - "" -
+      &atol,      # ATOL    FIXME: - "" -
       &0,         # ITOL    FIXME: - "" -
       0,          # JAC     FIXME: Support analytic jacobian
       &0,         # IJAC    FIXME: - "" -
