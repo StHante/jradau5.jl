@@ -12,26 +12,23 @@ The code works at the moment for rather simple problems and implements
 Further improvements will include using all the features of RADAU5
 in Julia that the original FORTRAN77 code allows.
 
-The original RADAU5 code include the lapack-routines can be found
+The original RADAU5 code including the lapack-routines can be found
 on Hairers web page
 http://www.unige.ch/~hairer/software.html
-These files are only in the repo, so it can be compiled easily.
-
-I appreciate every help concering licenses.
-
+These files are fetched, when the library is build using `wget`.
 
 
 ## Compiling
 
-All you need is a recent Julia installation and a recent gfortan, as
-well as make. Just cd in the directory and type `make`. This will build
+All you need is a recent Julia installation and a recent `gfortan`, as
+well as `make` and `wget`. Just cd in the directory and type `make`. This will build
 `jradau5.so`, which is needed by jradau5.jl.
 
 
 ## A simple example
 
-Integrate a simple harmonic oscillator $x'' = -x$ transformed into
-a first order system $y_1' = y_2$, $y_2' = -y_1$. This can be done
+Integrate a simple harmonic oscillator  x'' = -x  transformed into
+a first order system  y_1' = y_2  and  y_2' = -y_1. This can be done
 like this
 
     using jradau5
